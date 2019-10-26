@@ -1,0 +1,1 @@
+/* This file is only required for cmake, as cmake epects at least one source file */
