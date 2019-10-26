@@ -65,7 +65,7 @@ namespace M
         // Approximate value * 10^-exp with high accuracy
         // The accuracy has to be about 61 bits, otherwise the last digits might
         // not be exact
-        double x_hat = value * std::pow (long double (10), -_exp); // TODO: This is NOT accurate enough
+        double x_hat = value * std::pow (10, -_exp); // TODO: This is NOT accurate enough
         _f = uint64_t (x_hat);
 
         // This holds in any case (requiring only that value's accuracy is about 3 bit)
@@ -191,10 +191,10 @@ namespace M
       }
 
       static uint64_t pow10[19] = {
-        1e0, 1e1, 1e2, 1e3, 1e4,
-        1e5, 1e6, 1e7, 1e8, 1e9,
-        1e10, 1e11, 1e12, 1e13, 1e14,
-        1e15, 1e16, 1e17, 1e18
+        uint64_t (1e0), uint64_t (1e1), uint64_t (1e2), uint64_t (1e3), uint64_t (1e4),
+        uint64_t (1e5), uint64_t (1e6), uint64_t (1e7), uint64_t (1e8), uint64_t (1e9),
+        uint64_t (1e10), uint64_t (1e11), uint64_t (1e12), uint64_t (1e13), uint64_t (1e14),
+        uint64_t (1e15), uint64_t (1e16), uint64_t (1e17), uint64_t (1e18)
       };
 
       /*! \brief Only call this method if you are sure that you have 18 or 19 digits. This method reduces the
