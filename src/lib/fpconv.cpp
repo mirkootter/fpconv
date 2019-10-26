@@ -266,7 +266,7 @@ namespace M
         return "0";
 
       // Sign; Digits; Decimal point; Suffix
-      constexpr int max_number_of_digits = 1 + 18 + 1 + 7;
+      constexpr int max_number_of_digits = 1 + 19 + 1 + 7;
       QChar digits[max_number_of_digits];
 
       QChar* cursor = &digits[0];
